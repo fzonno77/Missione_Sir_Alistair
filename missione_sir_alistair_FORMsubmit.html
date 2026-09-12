@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="La Missione di Sir Alistair – Il tuo sogno, la tua avventura. Un gioco creativo per bambini fino a 12 anni.">
+<title>La Missione di Sir Alistair – Il tuo sogno, la tua avventura</title>
+<style>
+:root{--ink:#30261f;--brown:#684735;--gold:#d9a441;--cream:#fff8e9;--paper:#fffdf7;--red:#a84d3b;--green:#536b4c;--shadow:0 10px 30px rgba(48,38,31,.12)}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:radial-gradient(circle at 20% 10%,rgba(217,164,65,.1),transparent 28%),linear-gradient(180deg,#fffaf0 0%,#f7edda 100%);font-family:Georgia,"Times New Roman",serif;line-height:1.65}
+.container{width:min(1080px,92%);margin:auto} a{color:inherit}
+.hero{padding:58px 0 46px;text-align:center;background:linear-gradient(rgba(255,248,233,.9),rgba(255,248,233,.94)),repeating-linear-gradient(0deg,transparent 0 6px,rgba(104,71,53,.025) 7px);border-bottom:4px solid var(--gold)}
+.badge{display:inline-block;padding:7px 16px;border:1px solid var(--gold);border-radius:999px;background:#fffdf6;color:var(--brown);font-family:Arial,sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:18px auto 10px;max-width:900px;font-size:clamp(2.2rem,6vw,4.6rem);line-height:1.03;color:var(--brown)}
+.hero h1 span{display:block;color:var(--red);font-size:.55em;margin-top:12px}.lead{max-width:760px;margin:20px auto 0;font-size:1.22rem}
+.cta{display:inline-block;margin-top:28px;padding:14px 24px;border-radius:10px;background:var(--red);color:white;text-decoration:none;font-family:Arial,sans-serif;font-weight:700;box-shadow:0 6px 15px rgba(168,77,59,.22)}
+section{padding:48px 0}.card{background:rgba(255,253,247,.94);border:1px solid rgba(104,71,53,.14);border-radius:18px;padding:30px;box-shadow:var(--shadow)}
+h2{color:var(--brown);text-align:center;font-size:clamp(1.8rem,4vw,2.7rem);margin:0 0 20px}h3{color:var(--red);font-size:1.35rem;margin-top:0}.center{text-align:center}.intro{max-width:820px;margin:auto;font-size:1.08rem}
+.mission{position:relative;overflow:hidden;background:linear-gradient(135deg,#fff9e9,#f5e5c5)}.mission:after{content:"⚔";position:absolute;right:25px;top:15px;font-size:5rem;opacity:.08;transform:rotate(18deg)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.step{padding:24px 20px;border-radius:16px;background:#fffdf8;border:1px solid rgba(104,71,53,.13)}
+.number{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--gold);color:#fff;font-family:Arial,sans-serif;font-weight:800;margin-bottom:12px}
+.trials{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.trial{background:var(--paper);border-radius:18px;padding:26px;border-top:6px solid var(--gold);box-shadow:var(--shadow)}.trial:nth-child(2){border-top-color:var(--red)}.trial:nth-child(3){border-top-color:var(--green)}.trial .icon{font-size:2.3rem}.trial ul{padding-left:20px}
+.note{margin-top:22px;padding:18px 20px;border-left:5px solid var(--gold);background:#fff8e8;border-radius:8px}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:18px}.rule{padding:20px;background:#fffdf8;border-radius:14px;border:1px solid rgba(104,71,53,.12)}.rule strong{color:var(--brown)}
+.selection{background:linear-gradient(180deg,#fffdf7,#f8edd8)}.highlight{margin:25px 0;padding:25px;border:2px solid var(--gold);border-radius:16px;background:#fffaf0}.highlight ul{margin-bottom:0}
+.gallery{background:#4f634a;color:#fff}.gallery h2,.gallery h3{color:#fff3c7}.gallery-box{border:2px dashed rgba(255,255,255,.45);border-radius:18px;padding:35px;text-align:center;background:rgba(255,255,255,.06)}
+.parent{background:#f1e5d0}.warning{padding:18px 20px;background:#fff4df;border-radius:12px;border:1px solid rgba(104,71,53,.15)}
+footer{padding:35px 0 50px;text-align:center;font-family:Arial,sans-serif;font-size:.88rem;color:#6b5b50}.small{font-size:.92rem}.back{display:inline-block;margin-top:16px;color:var(--brown);font-family:Arial,sans-serif;font-weight:700}
+@media(max-width:760px){.steps,.trials,.rules{grid-template-columns:1fr}.hero{padding-top:40px}section{padding:34px 0}.card{padding:23px}}
+
+/* Contatori live della Missione */
+.mission-counters{background:linear-gradient(180deg,#fffdf7,#f8edd8)}
+.counter-intro{text-align:center;max-width:760px;margin:0 auto 22px}.counter-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.mission-counter{background:#fffdf8;border:1px solid rgba(104,71,53,.14);border-radius:16px;padding:22px;box-shadow:var(--shadow)}.mission-counter h3{margin:0 0 8px}.mission-counter .count{font-family:Arial,sans-serif;font-weight:800;font-size:2rem;color:var(--brown)}.mission-counter .limit{font-size:1rem;font-weight:400;color:#75665c}.mission-counter .bar{height:10px;background:#eadfcd;border-radius:999px;overflow:hidden;margin:12px 0}.mission-counter .bar>span{display:block;height:100%;width:0;background:var(--gold);transition:width .45s ease}.mission-counter.valid .bar>span{background:var(--green)}.mission-counter.closed .bar>span{background:var(--red)}.mission-counter .status{font-family:Arial,sans-serif;font-size:.9rem}.status.warn{color:#8a671d}.status.ok{color:var(--green)}.status.closed{color:var(--red)}.category-closed-message{display:none;margin-top:10px;padding:9px 11px;background:#fff0ec;border-radius:8px;color:var(--red);font-family:Arial,sans-serif;font-size:.86rem}.contest-closed{display:none;margin:24px auto 0;padding:16px 18px;max-width:850px;background:#fff0ec;border:1px solid rgba(168,77,59,.25);border-radius:12px;text-align:center;color:var(--red)}.counter-note{max-width:850px;margin:18px auto 0;text-align:center;font-size:.88rem;color:#6b5b50}@media(max-width:760px){.counter-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="container">
+<div class="badge">Una nuova avventura per piccoli creatori</div>
+<h1>La Missione di Sir Alistair<span>Il tuo sogno, la tua avventura</span></h1>
+<p class="lead">Hai un sogno? Hai una storia da raccontare, un disegno da creare o un'avventura da inventare? Allora questa missione è per te!</p>
+<a class="cta" href="#missione">Scopri la Missione ⚔️</a>
+</div></header>
+<main>
+<section id="missione"><div class="container"><div class="card mission">
+<h2>Hai un sogno? Raccontacelo!</h2>
+<p class="intro">Sir Alistair ci insegna una cosa importante: <strong>anche un sogno che sembra impossibile può diventare realtà, se troviamo il coraggio di inseguirlo.</strong></p>
+<p class="intro">Ora tocca a te. Scegli la tua prova, usa la fantasia e crea qualcosa che racconti il tuo modo di vedere il mondo.</p>
+<div class="steps"><div class="step"><div class="number">1</div><strong>Scegli la tua prova</strong><p>Puoi raccontare, disegnare oppure inventare una storia illustrata.</p></div><div class="step"><div class="number">2</div><strong>Crea la tua avventura</strong><p>La tua idea deve essere tua: originale, personale e piena di fantasia.</p></div><div class="step"><div class="number">3</div><strong>Affida la missione al tuo genitore</strong><p>Sarà il genitore o tutore a inviare la creazione e a gestire i contatti.</p></div></div>
+</div></div></section>
+<section><div class="container"><h2>Le tre prove</h2><div class="trials">
+<article class="trial"><div class="icon">📖</div><h3>Piccoli Narratori</h3><p>Scrivi una storia originale sul tema:</p><p><strong>“Il coraggio di inseguire un sogno”</strong></p><p>Massimo <strong>2.500 parole</strong>.</p></article>
+<article class="trial"><div class="icon">🎨</div><h3>Piccoli Artisti</h3><p>Realizza un disegno ispirato al tema:</p><p><strong>“Il coraggio di inseguire un sogno”</strong></p><p>La tecnica è libera: matite, pennarelli, colori, collage o digitale.</p></article>
+<article class="trial"><div class="icon">📚</div><h3>Storia Illustrata</h3><p>Inventa una breve storia e accompagnala con <strong>una o più illustrazioni</strong>.</p><p>Parole e immagini devono raccontare insieme la tua avventura.</p></article>
+</div><div class="note"><strong>Non devi usare Sir Alistair nella tua storia.</strong> Il libro è soltanto l'ispirazione per la Missione. Il protagonista della tua avventura puoi essere tu, oppure puoi inventare personaggi completamente nuovi.</div></div></section>
+<section class="mission-counters" id="contatori"><div class="container"><h2>Posti disponibili per la Missione</h2><p class="counter-intro">Ogni prova può accogliere al massimo <strong>15 partecipanti</strong>. Il contatore si aggiorna automaticamente.</p><div class="counter-grid"><div class="mission-counter" data-category="Piccoli Narratori"><h3>📖 Piccoli Narratori</h3><div class="count"><span class="counter-value">0</span><span class="limit"> / 15</span></div><div class="bar"><span></span></div><div class="status warn">Caricamento partecipazioni…</div><div class="category-closed-message">🔒 Categoria chiusa per raggiungimento del numero massimo.</div></div><div class="mission-counter" data-category="Piccoli Artisti"><h3>🎨 Piccoli Artisti</h3><div class="count"><span class="counter-value">0</span><span class="limit"> / 15</span></div><div class="bar"><span></span></div><div class="status warn">Caricamento partecipazioni…</div><div class="category-closed-message">🔒 Categoria chiusa per raggiungimento del numero massimo.</div></div><div class="mission-counter" data-category="Storia Illustrata"><h3>📚 Storia Illustrata</h3><div class="count"><span class="counter-value">0</span><span class="limit"> / 15</span></div><div class="bar"><span></span></div><div class="status warn">Caricamento partecipazioni…</div><div class="category-closed-message">🔒 Categoria chiusa per raggiungimento del numero massimo.</div></div></div><div id="contestClosed" class="contest-closed">🔒 <strong>La Missione è ufficialmente chiusa.</strong><br>Le partecipazioni si sono concluse il 31 dicembre 2026.</div><p class="counter-note">⚠️ Meno di 5 partecipazioni: la categoria non ha ancora raggiunto il minimo richiesto.<br>✅ Da 5 partecipazioni in poi: la categoria è valida.<br>🔒 A 15 partecipazioni: la categoria si chiude automaticamente.</p></div></section>
+
+<section><div class="container"><div class="card"><h2>Come funziona</h2><div class="rules">
+<div class="rule"><strong>👧 Età:</strong><br>la Missione è dedicata a bambini e ragazzi fino a 12 anni.</div>
+<div class="rule"><strong>1️⃣ Una creazione:</strong><br>ogni partecipante può inviare una sola creazione.</div>
+<div class="rule"><strong>👨‍👩‍👧 Il genitore partecipa:</strong><br>l'invio e tutte le comunicazioni sono gestiti dal genitore o tutore fin dall'inizio.</div>
+<div class="rule"><strong>✏️ Nome del bambino:</strong><br>per la partecipazione sono richiesti soltanto nome e età del bambino.</div>
+<div class="rule"><strong>🌟 Originalità:</strong><br>la creazione deve essere originale e realizzata dal bambino, con l'eventuale supporto del genitore.</div>
+<div class="rule"><strong>🤖 Intelligenza artificiale:</strong><br>non sono ammesse creazioni interamente generate dall'IA. Gli strumenti digitali possono essere usati come supporto, ma la parte creativa principale deve appartenere al bambino. Un uso significativo dell'IA deve essere dichiarato dal genitore.</div>
+</div></div></div></section>
+<section class="selection"><div class="container"><h2>Le tre Creazioni dei Piccoli Cavalieri</h2><div class="card">
+<p>Quando la Missione sarà terminata, <strong>Francesco Zonno</strong>, autore di <em>Sir Alistair e la battaglia dei bignè</em>, sceglierà personalmente <strong>una creazione per ciascuna delle tre prove</strong>.</p>
+<p>La scelta terrà conto, in particolare, di:</p><ul><li>originalità;</li><li>fantasia e creatività;</li><li>attinenza al tema della Missione;</li><li>emozione e forza del messaggio;</li><li>cura della creazione in relazione all'età.</li></ul>
+<div class="highlight"><p><strong>Niente votazioni online. Niente classifiche. Niente sistemi di punteggio.</strong></p><p>La scelta dell'autore è personale e insindacabile. Non sono previste giurie esterne né un procedimento interno di contestazione o revisione della scelta.</p></div>
+<h3>Che cosa succede alle tre creazioni scelte?</h3><p>Diventeranno le <strong>“Creazioni dei Piccoli Cavalieri”</strong> e saranno pubblicate nella <strong>Galleria dei Piccoli Cavalieri</strong> sul sito ufficiale.</p>
+<p>Per ciascuna creazione scelta, l'autore invierà:</p><ul><li>📖 una copia cartacea di <em>Sir Alistair e la battaglia dei bignè</em>;</li><li>✍️ una <strong>dedica personalizzata scritta a penna direttamente sul libro dall'autore</strong>;</li><li>🌟 la pubblicazione della creazione nella Galleria dei Piccoli Cavalieri.</li></ul>
+</div></div></section>
+<section class="gallery"><div class="container"><h2>La Galleria dei Piccoli Cavalieri</h2><div class="gallery-box"><h3>Qui nascerà la Galleria delle creazioni!</h3><p>Le tre creazioni scelte durante la Missione saranno raccolte qui, per diventare parte dell'avventura di Sir Alistair.</p><p class="small">Le eventuali pubblicazioni saranno effettuate nell'ambito della partecipazione gestita dal genitore o tutore e secondo le autorizzazioni previste.</p></div></div></section>
+<section class="parent"><div class="container"><div class="card"><h2>Informazioni per i genitori</h2><p>La Missione è pensata per essere semplice: <strong>il bambino crea, il genitore invia.</strong></p><p>Il bambino non deve gestire email, messaggi o comunicazioni. Il genitore o tutore presenta la creazione, fornisce i dati necessari e gestisce direttamente ogni eventuale comunicazione successiva.</p><div class="warning"><strong>Privacy e pubblicazione</strong><br>Saranno richiesti soltanto i dati necessari alla gestione della Missione. Non è necessario inviare fotografie del bambino. In caso di selezione, la pubblicazione della creazione sul sito avverrà con le autorizzazioni richieste al genitore o tutore.</div></div></div></section>
+<section><div class="container"><div class="card center"><h2>Pronto per la tua Missione?</h2><p class="intro">Ora tocca a te. Pensa a un sogno, immagina un'avventura e trasformala in una storia, in un disegno o in una storia illustrata.</p><p><strong>Non serve essere perfetti. Serve avere qualcosa da raccontare.</strong></p>
+<!-- Inserire qui il modulo o l'indirizzo email definitivo per l'invio -->
+<a class="cta" href="#modulo">Invia la tua creazione ⚔️</a>
+</div></div></section>
+<section id="modulo" class="parent"><div class="container"><div class="card"><h2>Invia la tua Missione</h2><p class="intro">Il modulo deve essere compilato <strong>dal genitore o tutore</strong>. Il bambino realizza la creazione, mentre il genitore si occupa dell'invio.</p><form action="https://formsubmit.co/francescozonno@gmail.com" method="POST" enctype="multipart/form-data" style="max-width:760px;margin:28px auto 0;"><label for="parent_name"><strong>Nome e cognome del genitore/tutore *</strong></label><input id="parent_name" name="parent_name" type="text" required style="width:100%;padding:13px;margin:7px 0 18px;border:1px solid #cbbda8;border-radius:8px;font:inherit;"><label for="email"><strong>Email del genitore/tutore *</strong></label><input id="email" name="email" type="email" required style="width:100%;padding:13px;margin:7px 0 18px;border:1px solid #cbbda8;border-radius:8px;font:inherit;"><label for="child_name"><strong>Nome del bambino *</strong></label><input id="child_name" name="child_name" type="text" required style="width:100%;padding:13px;margin:7px 0 18px;border:1px solid #cbbda8;border-radius:8px;font:inherit;"><label for="child_age"><strong>Età del bambino *</strong></label><input id="child_age" name="child_age" type="number" min="1" max="12" required style="width:100%;padding:13px;margin:7px 0 18px;border:1px solid #cbbda8;border-radius:8px;font:inherit;"><label for="category"><strong>Scegli la prova *</strong></label><select id="category" name="Prova scelta" required style="width:100%;padding:13px;margin:7px 0 18px;border:1px solid #cbbda8;border-radius:8px;font:inherit;background:white;"><option value="">Seleziona una prova</option><option>Piccoli Narratori</option><option>Piccoli Artisti</option><option>Storia Illustrata</option></select><label for="work_title"><strong>Titolo della creazione *</strong></label><input id="work_title" name="work_title" type="text" required style="width:100%;padding:13px;margin:7px 0 18px;border:1px solid #cbbda8;border-radius:8px;font:inherit;"><label for="message"><strong>Raccontaci brevemente la tua creazione</strong></label><textarea id="message" name="message" rows="5" style="width:100%;padding:13px;margin:7px 0 18px;border:1px solid #cbbda8;border-radius:8px;font:inherit;resize:vertical;"></textarea><label for="file"><strong>Allega la creazione *</strong></label><input id="file" name="attachment" type="file" required accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx" style="width:100%;padding:13px;margin:7px 0 8px;border:1px solid #cbbda8;border-radius:8px;background:white;font:inherit;"><p class="small">Formati consigliati: PDF, JPG, PNG o WEBP. Per testi molto lunghi è preferibile il PDF.</p><label style="display:block;margin:22px 0 12px;"><input type="checkbox" name="originality" required style="margin-right:8px;"> Dichiaro, in qualità di genitore/tutore, che la creazione è originale e che l'eventuale uso significativo di strumenti di IA è stato indicato.</label><label style="display:block;margin:12px 0 22px;"><input type="checkbox" name="publication_authorization" required style="margin-right:8px;"> Dichiaro di aver letto le informazioni della Missione e autorizzo, in caso di selezione, la pubblicazione della creazione nella Galleria dei Piccoli Cavalieri.</label><input type="hidden" name="_subject" value="Nuova Missione di Sir Alistair"><input type="hidden" name="_template" value="table"><input type="hidden" name="_webhook" value="https://script.google.com/macros/s/AKfycbw27-1zNTo1sLdQLQdzPOLPMHauekI3Nse9UggvleEfRvZWPKK5kF2V0FjOta5PEuFB/exec"><input type="hidden" name="_next" value="https://fzonno77.github.io/SirAlistair/missione_conferma.html"><button type="submit" style="display:block;margin:25px auto 0;padding:14px 28px;border:0;border-radius:10px;background:#a84d3b;color:white;font-family:Arial,sans-serif;font-size:1rem;font-weight:700;cursor:pointer;">⚔️ Invia la Missione</button></form><div class="warning" style="margin-top:28px;"><strong>Una cosa importante per il genitore</strong><br>Il modulo raccoglie solo le informazioni necessarie. Non chiediamo fotografie del bambino.</div><p class="small center" style="margin-top:22px;"><strong>Nota:</strong> l’invio viene gestito da FormSubmit. Alla prima compilazione potrebbe essere richiesta la conferma dell’indirizzo email.</p><a class="back" href="#missione">↑ Torna alla Missione</a></div></div></section>
+<a class="back" href="index.html">← Torna al sito di Sir Alistair</a></div></div></section>
+</main>
+<footer><div class="container"><strong>La Missione di Sir Alistair</strong><br>Il tuo sogno, la tua avventura.<br><br><span>© Francesco Zonno – Tutti i diritti riservati</span></div></footer>
+
+<script id="mission-counter-script">
+(function(){const API_URL='https://script.google.com/macros/s/AKfycbw27-1zNTo1sLdQLQdzPOLPMHauekI3Nse9UggvleEfRvZWPKK5kF2V0FjOta5PEuFB/exec',END_DATE=new Date('2027-01-01T00:00:00+01:00'),MAX=15,MIN=5,cards=[...document.querySelectorAll('.mission-counter')],form=document.querySelector('#modulo form'),select=document.getElementById('category'),banner=document.getElementById('contestClosed');function render(d){const c=d?.counts||{},closed=new Date()>=END_DATE||d?.closed===true;if(banner)banner.style.display=closed?'block':'none';cards.forEach(card=>{const cat=card.dataset.category,n=Math.min(Number(c[cat]||0),MAX),v=card.querySelector('.counter-value'),bar=card.querySelector('.bar>span'),st=card.querySelector('.status'),msg=card.querySelector('.category-closed-message');v.textContent=n;bar.style.width=n/MAX*100+'%';card.classList.toggle('valid',n>=MIN);card.classList.toggle('closed',n>=MAX||closed);if(closed){st.className='status closed';st.textContent=n>=MIN?'✅ Categoria valida al termine del contest.':'❌ Categoria non valida: non ha raggiunto il minimo di 5 partecipazioni.';msg.style.display='none'}else if(n>=MAX){st.className='status closed';st.textContent='🔒 Categoria chiusa per raggiungimento del limite di 15.';msg.style.display='block'}else if(n>=MIN){st.className='status ok';st.textContent='✅ Categoria valida — '+(MAX-n)+' posti ancora disponibili.';msg.style.display='none'}else{st.className='status warn';st.textContent='⚠️ '+n+' partecipazion'+(n===1?'e':'i')+' — non è ancora stato raggiunto il minimo di 5.';msg.style.display='none'}if(select){const o=[...select.options].find(o=>o.value===cat||o.text===cat);if(o)o.disabled=closed||n>=MAX}});if(form){const b=form.querySelector('button[type=submit]');if(b)b.disabled=closed||Object.values(c).every(v=>Number(v)>=MAX)}}async function load(){try{const r=await fetch(API_URL+'?v='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);const d=await r.json();if(!d||!d.counts)throw Error('Risposta API senza counts');console.log('[Missione] Contatori:',d.counts);render(d)}catch(e){console.error('[Missione] Errore contatori:',e);cards.forEach(card=>{const st=card.querySelector('.status');if(st){st.className='status warn';st.textContent='⚠️ Impossibile aggiornare il contatore. Riprova tra poco.'}})}}load();setInterval(load,30000);if(form)form.addEventListener('submit',e=>{const o=select?.selectedOptions?.[0];if(o?.disabled){e.preventDefault();alert('Questa categoria è chiusa. Scegli un’altra categoria ancora disponibile.');return false}if(new Date()>=END_DATE){e.preventDefault();alert('La Missione è terminata il 31 dicembre 2026.');return false}})})();
+</script>
+
+<script id="email-duplicate-check">
+(function(){
+  const API_URL = 'https://script.google.com/macros/s/AKfycbw27-1zNTo1sLdQLQdzPOLPMHauekI3Nse9UggvleEfRvZWPKK5kF2V0FjOta5PEuFB/exec';
+  const form = document.querySelector('#modulo form');
+  const emailInput = document.getElementById('email');
+  const submitButton = form ? form.querySelector('button[type="submit"]') : null;
+  if (!form || !emailInput || !submitButton) return;
+
+  const message = document.createElement('div');
+  message.id = 'emailDuplicateMessage';
+  message.style.cssText = 'display:none;margin:16px 0 0;padding:14px 16px;border-radius:10px;background:#fff0ee;border:1px solid #d98b7d;color:#8d2f20;font-weight:700;text-align:center;';
+  form.appendChild(message);
+
+  function showMessage(text, type) {
+    message.textContent = text;
+    message.style.display = 'block';
+    if (type === 'ok') {
+      message.style.background = '#eef9f0';
+      message.style.borderColor = '#8bc49a';
+      message.style.color = '#256b35';
+    } else {
+      message.style.background = '#fff0ee';
+      message.style.borderColor = '#d98b7d';
+      message.style.color = '#8d2f20';
+    }
+  }
+
+  form.addEventListener('submit', async function(event){
+    if (form.dataset.emailCheckPassed === 'yes') {
+      form.dataset.emailCheckPassed = '';
+      return;
+    }
+
+    event.preventDefault();
+    message.style.display = 'none';
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const email = emailInput.value.trim().toLowerCase();
+    if (!email) return;
+
+    submitButton.disabled = true;
+    submitButton.style.opacity = '0.65';
+    submitButton.textContent = 'Controllo email…';
+
+    try {
+      const response = await fetch(API_URL + '?checkEmail=' + encodeURIComponent(email) + '&v=' + Date.now(), {cache:'no-store'});
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      const data = await response.json();
+
+      if (data.emailAlreadySubmitted === true) {
+        showMessage('⚠️ Questa email risulta già utilizzata per una Missione. È possibile inviare una sola partecipazione per email.');
+        emailInput.focus();
+        submitButton.disabled = false;
+        submitButton.style.opacity = '1';
+        submitButton.textContent = '⚔️ Invia la Missione';
+        return;
+      }
+
+      form.dataset.emailCheckPassed = 'yes';
+      form.submit();
+    } catch (error) {
+      console.error('Controllo email non riuscito:', error);
+      showMessage('⚠️ Non è stato possibile verificare l’email. Per sicurezza, l’invio è stato bloccato. Riprova tra poco.');
+      submitButton.disabled = false;
+      submitButton.style.opacity = '1';
+      submitButton.textContent = '⚔️ Invia la Missione';
+    }
+  });
+})();
+</script>
+</body></html>
