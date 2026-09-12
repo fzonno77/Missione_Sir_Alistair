@@ -1,0 +1,301 @@
+<!DOCTYPE html> <html lang="en"><head><div class="lang-switch" style="position: fixed; top: 10px; right: 20px; z-index: 9999; font-family: sans-serif;"><a href="index.html" style="color: #2C1E11;">IT</a> | <a href="index-en.html" style="font-weight: bold; color: #F1B24A;">EN</a></div> <script async src="https://www.googletagmanager.com/gtag/js?id=G-3JCMRYE1C7"></script> <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3JCMRYE1C7');
+</script> <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sir Alistair - The Official Book Website</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet"> <style>
+        /* VARIABILI COLORE (Stile Pasticceria Fantasy - Neutro, Caldo ed Elegante) */
+        :root {
+            --primary: #F1B24A;        /* Giallo miele / biscotto */
+            --primary-hover: #D9962A;  /* Miele scuro */
+            --secondary: #D9463E;      /* Rosso mantello */
+            --dark: #2C1E11;           /* Marrone cioccolato per i testi */
+            --light-bg: #FAF6EE;       /* Crema chiaro di sfondo complessivo */
+            --white: #FFFFFF;
+            --shadow: 0 15px 35px rgba(44, 30, 17, 0.08);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --gold-border: #D4AF37;    /* Oro elegante per la cornice */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        /* HEADER */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+            backdrop-filter: blur(10px);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        /* BOTTONI */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            box-shadow: 0 6px 20px rgba(241, 178, 74, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(241, 178, 74, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--dark);
+            border: 2px solid var(--dark);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--dark);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+
+        /* SEZIONE AUTORE */
+
+/* SEZIONE AUTORE */
+        .autore {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .autore-block {
+            display: grid;
+            grid-template-columns: 0.6fr 1.4fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .autore-avatar {
+            width: 180px;
+            height: 180px;
+            background-color: #FAF6EE;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            justify-self: center;
+            overflow: hidden; /* Taglia via i bordi neri o gli angoli quadrati */
+            border: 4px solid #F1B24A; /* Bordo giallo/miele in stile con il sito */
+        }
+
+        /* Questa regola è fondamentale per adattare la foto  dentro il cerchio */
+        .autore-avatar img {
+            width: 100%;
+            height: 120%;
+            object-fit: cover; 
+    /* Centra il viso senza distorcere le proporzioni */
+            display: block;
+        }
+
+        .autore-text h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .autore-text p {
+            font-size: 17px;
+            color: #554637;
+            line-height: 1.6;
+            text-align: justify;
+        }        
+
+
+      /* FINE SEZIONE AUTORE */	
+
+<section class="contatti">
+        <div class="container">
+            <div class="contatti-header">
+                <h2>Contact the Author</h2>
+                <p>Sei una maestra, un educatore o vuoi informazioni per ordini di gruppo? Invia un messaggio direttamente da qui. Francesco ti risponder&agrave; al pi&ugrave; presto.</p>
+            </div>
+            
+            <form id="contact-form" class="form-contatto">
+                <div class="form-group">
+                    <label for="user_name">Name or School Name</label>
+                    <input type="text" id="user_name" name="name" required placeholder="Enter your name or school">
+                </div>
+                
+                <div class="form-group">
+                    <label for="user_email">Your Email</label>
+                    <input type="email" id="user_email" name="email" required placeholder="example@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Write your request here (e.g. number of copies, timeframe...)"></textarea> </div><button type="submit" id="btn-invia" class="btn-invia">Send Message</button></form></div></section> /* HERO SECTION */ .hero { padding: 60px 0; background: radial-gradient(circle at 90% 10%, #FFF0D4 0%, var(--light-bg) 70%); position: relative; } .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; } .hero-text { text-align: left; } .hero-text h1 { font-size: 44px; margin-bottom: 25px; color: var(--dark); } .hero-text p { font-size: 19px; margin-bottom: 35px; color: #554637; } .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; } /* CORNICE VIDEO DORATA E NEUTRA (RIPRISTINA AUTOPLAY GRAZIE AI PARAMETRI INLINE CORRETTI) */ .hero-video-wrapper { display: flex; justify-content: center; align-items: center; width: 100%; } .video-box { position: relative; width: 100%; max-width: 300px; background: #FFFDF9; /* Sfondo interno color crema chiaro */ border-radius: 24px; padding: 12px; box-shadow: 0 20px 45px rgba(212, 175, 55, 0.15), 0 10px 20px rgba(44, 30, 17, 0.1); border: 5px double var(--gold-border); /* Splendida doppia cornice dorata neutra */ transition: var(--transition); aspect-ratio: 9 / 16; overflow: hidden; } .video-box::before { content: '✨'; position: absolute; top: 5px; left: 5px; font-size: 10px; color: var(--gold-border); z-index: 10; } .video-box::after { content: '✨'; position: absolute; bottom: 5px; right: 5px; font-size: 10px; color: var(--gold-border); z-index: 10; } .video-box video { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 14px; outline: none; background-color: var(--light-bg); } /* SEZIONE TRAMA & MONDI */ .trama { padding: 100px 0; background-color: var(--light-bg); } .section-title { text-align: center !important; width: 100%; display: block; font-size: 36px; margin-bottom: 50px; font-family: 'Fredoka', sans-serif; } .section-title::after { content: ''; display: block; width: 70px; height: 5px; background-color: var(--primary); margin: 15px auto 0 auto; /* Questo centra la linea */ border-radius: 10px; } /* ---------------------------------------------------- */ * { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: 'Quicksand', sans-serif; background-color: var(--light-bg); color: var(--dark); line-height: 1.7; overflow-x: hidden; } .container { max-width: 1140px; margin: 0 auto; padding: 0 25px; } .mondi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; } .mondo-card { background-color: var(--light-bg); padding: 35px 25px; border-radius: 20px; text-align: center; border: 1px solid #F0EAE1; transition: var(--transition); } .mondo-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--primary); } .mondo-icon { font-size: 40px; margin-bottom: 15px; display: inline-block; } .mondo-card h3 { color: var(--secondary); margin-bottom: 12px; font-size: 20px; } /* SEZIONE REGALO (FORM E COMPORTAMENTO REPORT LOCALE) */ .regalo { padding: 100px 0; background-color: #FFF2DB; } .regalo-card { max-width: 750px; margin: 0 auto; background-color: var(--white); padding: 50px 40px; border-radius: 30px; box-shadow: var(--shadow); border: 3px dashed var(--primary); text-align: center; position: relative; } .regalo-card h2 { font-size: 36px; margin-bottom: 10px; } .badge-kindle { background-color: var(--secondary); color: var(--white); display: inline-block; padding: 6px 18px; border-radius: 50px; font-weight: 700; font-size: 13px; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 0.5px; } .regalo-desc { font-size: 17px; margin-bottom: 35px; color: #554637; } .form-box { max-width: 450px; margin: 0 auto; } .form-group { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; } .form-input { padding: 16px 24px; border-radius: 50px; border: 2px solid #E6DFD5; font-size: 16px; font-family: inherit; outline: none; transition: var(--transition); background-color: var(--light-bg); } .form-input:focus { border-color: var(--primary); background-color: var(--white); box-shadow: 0 0 0 4px rgba(241, 178, 74, 0.15); } .success-message { display: none; /* Si attiva solo con JavaScript */ background-color: #E6F4EA; color: #137333; padding: 20px; border-radius: 15px; font-weight: 600; margin-top: 20px; margin-bottom: 20px; border: 1px solid #CEEAD6; text-align: center; } /* CONTENITORE STORIA BREVE (APPARIRA' IN LINEA SOTTO IL FORM SENZA INVIARE EMAIL ESTERNE) */ .story-container { display: none; /* Nascondi inizialmente, mostrato via JS al submit */ margin-top: 30px; background: #FFFDF9; border: 2px solid #E6DFD5; border-radius: 20px; padding: 35px; text-align: left; box-shadow: inset 0 0 20px rgba(44, 30, 17, 0.05); } .story-header { text-align: center; border-bottom: 2px dashed var(--primary); padding-bottom: 15px; margin-bottom: 25px; } .story-header h3 { color: var(--secondary); font-size: 24px; } .story-page { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px dashed #E6DFD5; } .story-page:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; } .page-badge { display: inline-block; background: var(--dark); color: var(--white); font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 10px; margin-bottom: 10px; text-transform: uppercase; } .story-page p { font-size: 16px; color: var(--dark); line-height: 1.6; margin-bottom: 12px; } /* FOOTER */ footer { background-color: var(--dark); color: var(--white); padding: 80px 0 30px 0; text-align: center; } footer h2 { font-size: 36px; margin-bottom: 20px; color: var(--primary); } footer p { max-width: 600px; margin: 0 auto 35px auto; font-size: 17px; color: #CBC4BC; } .copyright { margin-top: 60px; font-size: 14px; color: #8C8073; border-top: 1px solid #423224; padding-top: 25px; } /* RESPONSIVE DESIGN */ @media (max-width: 992px) { .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; } .hero-video-wrapper { order: -1; } .hero-buttons { justify-content: center; } .autore-block { grid-template-columns: 1fr; text-align: center; gap: 30px; } } @media (max-width: 576px) { .hero-text h1 { font-size: 30px; } .hero-buttons .btn { width: 100%; } .regalo-card { padding: 35px 20px; } } /* MODAL POPUP VIGNETTE */ .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(44, 30, 17, 0.7); backdrop-filter: blur(5px); z-index: 2000; justify-content: center; align-items: center; padding: 20px; opacity: 0; transition: opacity 0.3s ease; } .modal-overlay.active { display: flex; opacity: 1; } .modal-content { background-color: var(--white); border-radius: 24px; max-width: 650px; width: 100%; padding: 35px; box-shadow: 0 25px 50px rgba(0,0,0,0.15); border: 4px double #F1B24A; position: relative; transform: scale(0.9); transition: transform 0.3s ease; text-align: center; /* Placeholder per immagine dal libro */ background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('immagine_dal_libro.jpg'); background-size: cover; background-position: center; } border-radius: 24px; max-width: 650px; width: 100%; padding: 35px; box-shadow: 0 25px 50px rgba(0,0,0,0.15); border: 4px double #F1B24A; position: relative; transform: scale(0.9); transition: transform 0.3s ease; text-align: center; } .modal-overlay.active .modal-content { transform: scale(1); } .close-modal { position: absolute; top: 15px; right: 20px; font-size: 32px; color: #8C8073; cursor: pointer; transition: color 0.3s; } .close-modal:hover { color: #D9463E; } .modal-image-wrapper { width: 100px; height: 100px; margin: 0 auto 20px auto; background-color: #FFF9EE; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px dashed #F1B24A; font-size: 50px; } .modal-title { font-family: 'Fredoka', sans-serif; color: #D9463E; font-size: 24px; margin-bottom: 15px; } .vignetta-box { background-color: #FAF6EE; border-left: 5px solid #F1B24A; padding: 20px; border-radius: 12px; text-align: left; font-style: italic; position: relative; } .vignetta-box p { font-size: 16px; color: #2C1E11; line-height: 1.6; margin-bottom: 10px; } .vignetta-box p:last-child { margin-bottom: 0; } .vignetta-citation { display: block; text-align: right; font-size: 12px; font-weight: 700; color: #8C8073; text-transform: uppercase; margin-top: 10px; font-style: normal; } .mondo-card { cursor: pointer; position: relative; } .mondo-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(44, 30, 17, 0.08); border-color: #F1B24A; background-color: #FFFDF9; } /* --- STILE SEZIONE CONTATTI --- */ .contatti { padding: 80px 0; background-color: #fcfbf9; /* Un avorio chiarissimo molto raffinato */ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; } .contatti-header { text-align: center; max-width: 600px; margin: 0 auto 40px auto; } .contatti-header h2 { font-size: 32px; color: #222; margin-bottom: 15px; } .contatti-header p { font-size: 16px; color: #666; line-height: 1.6; } /* Il Box Bianco del Form */ .form-contatto { max-width: 550px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Ombra leggerissima e moderna */ border: 1px solid #eaeaea; } /* Spaziatura tra i campi */ .form-group { margin-bottom: 25px; } .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; font-size: 14px; } /* I campi di testo */ .form-group input, .form-group textarea { width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; transition: all 0.3s ease; background-color: #fafafa; box-sizing: border-box; /* Evita che escano dai margini */ } /* Effetto quando l'utente clicca su un campo per scrivere */ .form-group input:focus, .form-group textarea:focus { border-color: #333; /* Il bordo diventa scuro */ background-color: #fff; outline: none; box-shadow: 0 0 0 3px rgba(0,0,0,0.05); /* Piccolo alone intorno al campo */ } /* Il Pulsante Invia */ .btn-invia { background-color: #333; color: white; padding: 16px 30px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; width: 100%; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.1); } /* Effetto quando si passa il mouse sul pulsante */ .btn-invia:hover { background-color: #000; transform: translateY(-1px); /* Si solleva leggermente */ box-shadow: 0 7px 20px rgba(0,0,0,0.15); } /* Stato bloccato durante l'invio */ .btn-invia:disabled { background-color: #999; cursor: not-allowed; } /* --- STILE SEZIONE CONTATTI --- */ .contatti { padding: 80px 0; background-color: #fcfbf9; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; } .contatti-header { text-align: center; max-width: 600px; margin: 0 auto 40px auto; } .contatti-header h2 { font-size: 32px; color: #222; margin-bottom: 15px; } .contatti-header p { font-size: 16px; color: #666; line-height: 1.6; } .form-contatto { max-width: 550px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); border: 1px solid #eaeaea; } .form-group { margin-bottom: 25px; } .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; font-size: 14px; } .form-group input, .form-group textarea { width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; transition: all 0.3s ease; background-color: #fafafa; box-sizing: border-box; } .form-group input:focus, .form-group textarea:focus { border-color: #333; background-color: #fff; outline: none; box-shadow: 0 0 0 3px rgba(0,0,0,0.05); } .btn-invia { background-color: #333; color: white; padding: 16px 30px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; width: 100%; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.1); } .btn-invia:hover { background-color: #000; transform: translateY(-1px); box-shadow: 0 7px 20px rgba(0,0,0,0.15); } .btn-invia:disabled { background-color: #999; cursor: not-allowed; } </style></head><body><header><div class="container"><a href="#" class="logo">🍰 <strong>Sir <span>Alistair</span> and the Battle of the Bignè</strong></a></div></header><section class="hero"><div class="container"><div class="hero-grid"><div class="hero-text"><h1>What if the hero of your favorite fantasy book decided to drop his sword... and become a pastry chef?</h1><p>Discover the incredible and hilarious journey of Sir Alistair, the silver knight tired of being a "barbecue target" for dragons, who quit his own pages to pursue his true calling.</p><div class="hero-buttons"><a href="https://amzn.eu/d/01tGbdn9" target="_blank" class="btn btn-primary">Buy the Book</a></div></div><div class="hero-video-wrapper"><div class="video-box"><video controls playsinline autoplay muted loop preload="auto"><source src="video/video.mp4" type="video/mp4"> Your browser does not support video playback. </video></div></div></div></div></section><section class="prologo-sezione" style="padding: 60px 0; background-color: #fff; font-family: 'Segoe UI', sans-serif;"><div style="max-width: 800px; margin: 0 auto; padding: 0 20px; line-height: 1.8; color: #333; text-align: justify"><h2 style="font-size: 32px; color: #222; text-align: center; margin-bottom: 30px;">THE PROLOGUE - Sir Alistair’s Secret: A Story Outside the Lines</h2><p style="font-size: 16px; margin-bottom: 15px;">Every proper fairy tale begins with a knight without fear or flaw, ready to fight fire-breathing dragons to protect the kingdom. And for a long time, Sir Alistair’s story was exactly like that. Page after page, chapter after chapter, always the same routine: polish the armor, mount the horse, face the monster, save everyone, start all over again.</p><p style="font-size: 16px; margin-bottom: 15px;">But behind that shining helmet, Sir Alistair was hiding a secret. <strong style="color: #c0392b;">He was officially fed up.</strong></p><p style="font-size: 16px; margin-bottom: 15px;">He was tired of the weight of that armor creaking with every step, of princesses who screamed far too much and, let’s be honest, he had had enough of fighting. Sir Alistair no longer wanted to be the perfect hero of a story that had already been written. He had a secret dream, a dream scented with powdered sugar, cinnamon and melted chocolate: he wanted to become a pastry chef!</p><p style="font-size: 16px; margin-bottom: 15px;">So, one night, while the author of the book was fast asleep and the readers had closed the page, Sir Alistair made an incredible decision. He laid down his sword, removed his iron gloves and decided to do the one thing a character of his importance was never supposed to do...</p><p style="font-size: 18px; font-weight: bold; text-align: center; margin: 25px 0; color: #222;">He decided to escape from his own book in search of happiness.</p><p style="font-size: 16px; margin-bottom: 30px;">But how do you escape from a story? And what happens if, on the road to freedom, our pastry-chef knight encounters a dragon who, instead of breathing fire, is hiding a secret as big as his own?</p></div></section><section class="trama"><div class="container"><h2 class="section-title">THE STORY - A white hole in the page... Where did the hero go?</h2><div class="trama-text"><p>It all begins in the quiet library on Cherry Street. Little Leo is reading his favorite book, <em>"Sir Alistair and the Valley of Dragons"</em>, when something never seen before happens: the words begin to tremble and slide off the paper. Only a white silhouette remains at the center of the page. Sir Alistair is gone!</p><p>And so begins a hilarious, chaotic escape through different literary genres. Along with Leo, you will chase Alistair as he gets lost and causes trouble across the worlds of literature:</p></div><div class="mondi-grid"><div class="mondo-card" onclick="openChapterModal('ricettari')"><span class="mondo-icon">🧁</span><img src="images/immagine_01.png" alt="The Recipe Books" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; display: block;"><h3>The Recipe Books</h3><p>Where his silver armor risks being completely covered in royal icing.</p></div><div class="mondo-card" onclick="openChapterModal('spazio')"><span class="mondo-icon">🚀</span><img src="images/immagine_02.png" alt="Space" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; display: block;"><h3>Space</h3><p>Among unknown constellations, alien planets and a complete lack of gravity.</p></div><div class="mondo-card" onclick="openChapterModal('gialli')"><span class="mondo-icon">🔍</span><img src="images/immagine_03.png" alt="Detective Mysteries" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; display: block;"><h3>Detective Mysteries</h3><p>Among smoky black-and-white private detectives and intricate mysteries to solve.</p></div><div class="mondo-card" onclick="openChapterModal('egitto')"><span class="mondo-icon">🏺</span><img src="images/immagine_04.jpg" alt="Ancient Egypt" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; display: block;"><h3>Ancient Egypt</h3><p>Dealing with millennia-old mummies that are decidedly fussy and demanding.</p></div><div class="mondo-card" onclick="openChapterModal('pirati')"><span class="mondo-icon">🏴‍☠️</span><img src="images/immagine_05.png" alt="Pirate Seas" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; display: block;"><h3>Pirate Seas</h3><p>In an epic and hilarious island crossover that will put his self-control to the test.</p></div><div class="mondo-card" style="cursor: default; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;"><div style="width: 320px; height: 320px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; overflow: hidden;"><img src="images/immagine_06.png" alt="Jolly" style="max-width: 100%; max-height: 100%; object-fit: contain;" /></div><h3>...and much more!</h3></div></div></div></div></section><section class="autore"><div class="container"><div class="autore-block"><div class="autore-avatar"><img src="images/immagine_07.jpg" alt="Francesco"></div><div class="autore-text"><h2>Who brought Sir Alistair to life?</h2><p>Hi, I’m Francesco! Sir Alistair’s story has a special origin: it began with stories I wrote when I was little, when I was a boy dreaming of adventures at school. Some time ago, I happened to find them again in an old drawer at my parents’ house. Reading them again made me realize that the same magic could speak to children today.</p><p>I chose to preserve the spirit of those stories, turning them into a book written by a young person for young readers. I firmly believe that nobody is better placed than someone who has just lived through the age of discovery to understand, move and engage their peers. Sir Alistair is not just a story; it is my way of showing that the voice of young people, when it is authentic, has the power to break down every barrier — even the one between the real world and the world of books.</p></div></div></div></section><section class="contatti"><div class="container"><div class="contatti-header"><h2>Contact the Author</h2><p>Are you a teacher, an educator, or would you like information about group orders or special offers? Send a message directly from here. Francesco will get back to you as soon as possible.</p></div><form id="contact-form" class="form-contatto"><div class="form-group"><label for="user_name">Name or School Name</label><input type="text" id="user_name" name="name" required placeholder="Enter your name or school"></div><div class="form-group"><label for="user_email">Your Email</label><input type="email" id="user_email" name="email" required placeholder="example@email.com"></div><div class="form-group"><label for="message">Message</label> <textarea id="message" name="message" rows="5" required placeholder="Write your request here (e.g. number of copies, timeframe...)"></textarea> </div><button type="submit" id="btn-invia" class="btn-invia">Send Message</button></form></div></section><footer><div class="container"><h2>Bring the complete adventure to your bookshelf!</h2><p>If you enjoyed the ending, discover Leo and Alistair’s complete independent journey. The full book is waiting for you on Amazon in paperback (perfect for browsing) and digital eBook editions.</p><a href="https://amzn.eu/d/01tGbdn9" target="_blank" class="btn btn-primary">Buy on Amazon</a><div class="copyright"> &copy; 2026 Sir Alistair - All rights reserved. Independent website created by Francesco. </div></div></footer> <script>
+        document.getElementById('leadMagnetForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevents the page from refreshing and losing the data
+            
+            var name = document.getElementById('userName').value;
+            var email = document.getElementById('userEmail').value;
+            
+            // Debug console log interno
+            console.log("Data collected for the final simulation report:");
+            console.log("User Name: " + name);
+            console.log("User Email: " + email);
+            
+            // 1. AGGIORNA E SBLOCCA IMMEDIATAMENTE LA STORIA SULLO SCHERMO
+            document.getElementById('insertedName').innerText = name;
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('miniStoriaBox').style.display = 'block';
+            
+            // Nasconde i campi del form per pulizia grafica, visto che l'azione è fatta
+            document.getElementById('leadMagnetForm').style.display = 'none';
+            
+            // Effettua lo scorrimento fluido fino alla storia sbloccata
+            document.getElementById('miniStoriaBox').scrollIntoView({ behavior: 'smooth' });
+            
+            // 2. INVIA I DATI AL TUO FOGLIO EXCEL IN BACKGROUND SINO A TERMINARE IL PROCESSO
+            // Sostituisci l'URL sotto con il tuo link reale di Google Apps Script che finisce con /exec
+            fetch("https://script.google.com/macros/s/AKfycbzhf3Cfpm_CS2De900fQIDCw3-3qeNQtkC43hEN629ene9GMyF7uhInvXKJILwzbuXp/exec", {
+                method: "POST",
+                mode: "no-cors", // Cruciale per evitare che i sistemi di protezione del browser blocchino la pagina
+                headers: {
+                    "Content-Type": "text/plain"
+                },
+                body: JSON.stringify({
+                    nome: name,
+                    email: email
+                })
+            })
+            .then(function() {
+                console.log("Google Excel file writing completed successfully in the background.");
+            })
+            .catch(function(error) {
+                console.error("Errore di invio dati all'Excel:", error);
+            });
+        });
+    </script> <div id="chapterModal" class="modal-overlay" onclick="closeChapterModalOnOverlay(event)"><div class="modal-content"><span class="close-modal" onclick="closeChapterModal()">&times;</span><div class="modal-image-wrapper" id="modalIcon"></div><h3 class="modal-title" id="modalTitle">Title</h3><div class="vignetta-box"><div id="modalExcerptText"></div><span class="vignetta-citation" id="modalPage">Page</span></div></div></div> <script>
+        const chapterData = {
+            ricettari: {
+                title: "A Thousand Recipes and a Hungry Knight", page: "Pages 7-11", icon: "🧁",
+                vignetta: `<p>“Flour! No, powdered sugar!”</p><p>Leo looked around. He was in a kitchen; outside, the sky was a deep candy-pink, and on the horizon stood brown mountains that suspiciously resembled enormous chocolate bignè.</p><p>But there was no time to admire the landscape: a metallic cry tore through the cinnamon-scented air. <strong>“Get him! It’s a silver dragon’s claw!”</strong> a shrill voice shouted. Sir Alistair was being chased by little pastry chefs made of shortcrust dough, armed with teaspoons!</p>`
+            },
+            spazio: {
+                title: "Astronomy for Young Explorers", page: "Pages 20-22", icon: "🚀",
+                vignetta: `<p>“You’re not a ghost, Alistair. We’re in space,” Leo explained, trying to swim through the air to grab the knight, who was spinning around like a crazy top.</p><p>“Space? And where is the castle? Why aren’t my boots touching the ground? This is the bad kind of sorcery!”</p><p>The knight tried to draw his sword, but it flew from his hand, lazily floating toward a miniature black hole on the neighboring page. <strong>“My weapon! My honor! Everything is drifting away!”</strong></p>`
+            },
+            gialli: {
+                title: "The Mystery of the Missing Diamond", page: "Pages 26-29", icon: "🔍",
+                vignetta: `<p>“Hey! Who turned off the world?” Alistair complained, trying to polish his armor, which in that black-and-white world stood out like a beacon in the fog. “Why does everything look like the ashes in my fireplace?”</p><p>“We’re in a detective mystery, Alistair. A detective book.”</p><p>A man in a long raincoat and a hat pulled low over his eyes emerged from the shadows: <strong>“You entered a crime scene without permission. And your friend shines too much... That armor is made of highly suspicious material.”</strong></p>`
+            },
+            egitto: {
+                title: "The Ancient Egypt Section", page: "Pages 38-39", icon: "🏺",
+                vignetta: `<p>“There’s the Ancient Egypt section. Maybe people there are more... composed!”</p><p>“Egypt? I hope they have armchairs!” Alistair shouted as they ran breathlessly toward the edge of the page.</p><p>“And maybe someone who can get these bits of bignè out of my joints. I’m starting to smell like a pastry shop, and this guy is looking at me as if I were a tray of snacks!”</p>`
+            },
+            pirati: {
+                title: "The Pirate Seas & Legendary Crossover", page: "Pages 66-67", icon: "🏴‍☠️",
+                vignetta: `<p>As soon as Leo finished saying the word “pirate,” a bush shook violently. Out came a blond fellow in a blue vest, looking like someone who had just tripped over his own destiny.</p><p>“Everybody freeze!” the newcomer shouted, trying to strike a heroic pose that ended in a half-slip on the sand.</p><p><strong>“Tremble! I am Guybrush Threepwood, and I am a fearsome pirate!”</strong> Sir Alistair slowly got to his feet...</p>`
+            }
+        };
+
+        function openChapterModal(key) {
+            const data = chapterData[key];
+            if (!data) return;
+            document.getElementById('modalIcon').innerText = data.icon;
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalExcerptText').innerHTML = data.vignetta;
+            document.getElementById('modalPage').innerText = data.page;
+            document.getElementById('chapterModal').classList.add('active');
+        }
+
+        function closeChapterModal() { document.getElementById('chapterModal').classList.remove('active'); }
+        function closeChapterModalOnOverlay(e) { if (e.target.id === 'chapterModal') closeChapterModal(); }
+    </script> <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> <script type="text/javascript">
+       (function() {
+          // Paste your Public Key here (from the Account menu)
+          emailjs.init("ozTvWQJqUvVVseGBC");
+       })();
+
+       document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+
+          const btn = document.getElementById('btn-invia');
+          btn.innerText = 'Sending...';
+          btn.disabled = true;
+
+          // Incolla qui il tuo Service ID e il tuo Template ID
+          emailjs.sendForm('service_sirAlistair', 'template_opef29u', this)
+              .then(function() {
+                  alert('Message inviato con successo! Francesco ti risponder\u00e0 al pi\u00f9 presto.');
+                  document.getElementById('contact-form').reset();
+                  btn.innerText = 'Send Message';
+                  btn.disabled = false;
+              }, function(error) {
+                  alert('Oops... Something went wrong. Please try again later.');
+                  btn.innerText = 'Send Message';
+                  btn.disabled = false;
+                  console.log('FAILED...', error);
+              });
+       });
+    </script> </body></html>
