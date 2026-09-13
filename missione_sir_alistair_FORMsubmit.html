@@ -1,0 +1,225 @@
+<script>
+(function(){
+const API_URL='https://script.google.com/macros/s/AKfycbw27-1zNTo1sLdQLQdzPOLPMHauekI3Nse9UggvleEfRvZWPKK5kF2V0FjOta5PEuFB/exec';
+
+const form=document.querySelector('#modulo form');
+const emailInput=document.getElementById('email');
+const button=form ? form.querySelector('button[type="submit"]') : null;
+
+if(!form || !emailInput || !button)return;
+
+const message=document.createElement('div');
+
+message.style.cssText=
+'display:none;' +
+'margin:16px 0 0;' +
+'padding:14px 16px;' +
+'border-radius:10px;' +
+'background:#fff0ee;' +
+'border:1px solid #d98b7d;' +
+'color:#8d2f20;' +
+'font-weight:700;' +
+'text-align:center;';
+
+form.appendChild(message);
+
+
+function reset(){
+
+button.disabled=false;
+button.style.opacity='1';
+button.textContent='?? Invia la Missione';
+
+}
+
+
+function checkEmail(email){
+
+return new Promise((resolve,reject)=>{
+
+const cb=
+'missioneEmailCheck_' +
+Date.now() +
+'_' +
+Math.floor(Math.random()*100000);
+
+const s=document.createElement('script');
+
+let done=false;
+
+
+const finish=(err,data)=>{
+
+if(done)return;
+
+done=true;
+
+clearTimeout(timer);
+
+try{
+delete window[cb];
+}catch(e){
+window[cb]=undefined;
+}
+
+if(s.parentNode){
+s.remove();
+}
+
+if(err){
+reject(err);
+}else{
+resolve(data);
+}
+
+};
+
+
+const timer=setTimeout(
+()=>finish(new Error('timeout')),
+10000
+);
+
+
+window[cb]=data=>finish(null,data);
+
+
+s.onerror=()=>{
+finish(new Error('script error'));
+};
+
+
+s.src=
+API_URL +
+'?checkEmail=' +
+encodeURIComponent(email) +
+'&callback=' +
+encodeURIComponent(cb) +
+'&v=' +
+Date.now();
+
+
+document.head.appendChild(s);
+
+});
+
+}
+
+
+form.addEventListener('submit',function(e){
+
+/*
+  Se il controllo email è già stato superato,
+  lasciamo proseguire il normale invio del form.
+*/
+if(form.dataset.emailCheckPassed==='yes'){
+
+form.dataset.emailCheckPassed='';
+
+return;
+
+}
+
+
+/*
+  Prima di inviare a FormSubmit,
+  blocchiamo temporaneamente l'invio.
+*/
+e.preventDefault();
+
+message.style.display='none';
+
+
+/*
+  Controlliamo che tutti i campi obbligatori
+  siano compilati correttamente.
+*/
+if(!form.checkValidity()){
+
+form.reportValidity();
+
+return;
+
+}
+
+
+const email=emailInput.value.trim().toLowerCase();
+
+
+/*
+  Disabilitiamo il pulsante mentre
+  controlliamo l'email.
+*/
+button.disabled=true;
+button.style.opacity='.65';
+button.textContent='Controllo email…';
+
+
+/*
+  Controlliamo l'email tramite Google Apps Script.
+*/
+checkEmail(email)
+
+.then(data=>{
+
+
+/*
+  Verifichiamo che la risposta
+  dell'Apps Script sia corretta.
+*/
+if(!data || data.ok!==true){
+
+throw new Error('Risposta API non valida');
+
+}
+
+
+/*
+  EMAIL GIÀ UTILIZZATA
+*/
+if(data.emailAlreadySubmitted===true){
+
+message.textContent=
+'?? Questa email risulta già utilizzata per una Missione. ' +
+'È possibile inviare una sola partecipazione per email.';
+
+message.style.display='block';
+
+emailInput.focus();
+
+reset();
+
+return;
+
+}
+
+
+/*
+  EMAIL NUOVA:
+  autorizziamo l'invio del form.
+*/
+form.dataset.emailCheckPassed='yes';
+
+form.submit();
+
+})
+
+
+.catch(err=>{
+
+console.error('Controllo email non riuscito:',err);
+
+message.textContent=
+'?? Non è stato possibile verificare l’email. ' +
+'Per sicurezza, l’invio è stato bloccato. Riprova tra poco.';
+
+message.style.display='block';
+
+reset();
+
+});
+
+});
+
+})();
+</script>
